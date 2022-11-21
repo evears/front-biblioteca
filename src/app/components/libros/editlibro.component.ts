@@ -17,28 +17,28 @@ export class EditlibroComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.libroserv.detail(id).subscribe(
-      data => {
+    this.libroserv.detail(id).subscribe({
+      next: data => {
         alert("¿Está seguro que desea modificar el libro?");
         this.libro = data;
-      }, err => {
+      }, error: err => {
         alert("Error al seleccionar el libro a modificar");
         this.router.navigate(['']);
       }
-    )
+    })
   }
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.libroserv.update(id, this.libro).subscribe(
-      data => {
+    this.libroserv.update(id, this.libro).subscribe({
+      next: data => {
         alert("Libro modificado correctamente");
         this.router.navigate(['']);
-      }, err => {
+      }, error: err => {
         alert("Error al modificar el libro");
         this.router.navigate(['']);
       }
-    )
+    })
   }
 
 }

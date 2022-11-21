@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LibrosComponent } from './components/libros/libros.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NewlibroComponent } from './components/libros/newlibro.component';
 import { EditlibroComponent } from './components/libros/editlibro.component';
 
@@ -20,12 +20,9 @@ import { EditlibroComponent } from './components/libros/editlibro.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
     FormsModule
   ],
-  providers: [
-    ReactiveFormsModule
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

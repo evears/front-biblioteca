@@ -25,15 +25,15 @@ export class NewlibroComponent implements OnInit {
 
   onCreate(): void {
     const libro = new Libro(this.nombre, this.autor, this.editorial, this.anio, this.fueLeido, this.formato);
-    this.libroserv.save(libro).subscribe(
-      data => {
+    this.libroserv.save(libro).subscribe({
+      next: data => {
         alert("Libro agregado a la biblioteca");
         this.router.navigate(['']);
-      }, err => {
+      }, error: err => {
         alert("Error al agregar el libro");
         this.router.navigate(['']);
       }
-    )
+    })
   }
 
 }

@@ -24,14 +24,14 @@ export class LibrosComponent implements OnInit {
   delete(id?: number) {
     alert("¿Está seguro que desea eliminar el libro?");
     if (id != undefined) {
-      this.libroserv.delete(id).subscribe(
-        data => {
+      this.libroserv.delete(id).subscribe({
+        next: data => {
           alert("Libro eliminado exitosamente");
           this.cargarLibros();
-        }, err => {
+        }, error: err => {
           alert("No se puede eliminar el libro");
         }
-      )
+      })
     }
   }
 
