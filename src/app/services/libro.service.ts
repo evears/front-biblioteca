@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LibroService {
 
-  libroURL = environment.URL;
+  libroURL = 'https://app-curso-production.up.railway.app/api/libro/';
 
   constructor(private httpClient: HttpClient) { }
 
